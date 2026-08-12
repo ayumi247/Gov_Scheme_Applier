@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gov Scheme Applier | AI Powered Applications</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Architecture -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        .hero h1 span {
+            color: var(--accent-blue);
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="fa-solid fa-building-columns"></i>
+                GovApplier
+            </a>
+            
+            <div class="nav-links">
+                <a href="schemes.html" class="nav-link">Schemes</a>
+                <a href="#how-it-works" class="nav-link">How it Works</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="auth.html" class="btn btn-secondary">Log In</a>
+                <a href="auth.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Hero Section -->
+            <section class="hero animate-fade-in-up">
+                <h1>Government forms, <span>simplified by AI.</span></h1>
+                <p>Don't let complex portals and language barriers stop you from getting the benefits you deserve. Upload your documents, and our AI will apply on the e-District portal for you.</p>
+                <div class="hero-actions">
+                    <a href="schemes.html" class="btn btn-primary btn-lg" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                        Browse Schemes <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="how-it-works" style="margin-top: 4rem;">
+                <h2 style="text-align: center; margin-bottom: 3rem;">How it Works</h2>
+                <div class="features-grid">
+                    
+                    <div class="card animate-fade-in-up stagger-1 text-center">
+                        <i class="fa-solid fa-file-arrow-up feature-icon"></i>
+                        <h3 class="card-title">1. Upload Documents</h3>
+                        <p class="card-text">Securely upload your Aadhar, Income proof, and photos. We store them safely for all future applications.</p>
+                    </div>
+                    
+                    <div class="card animate-fade-in-up stagger-2 text-center">
+                        <i class="fa-solid fa-microchip feature-icon"></i>
+                        <h3 class="card-title">2. AI Verification</h3>
+                        <p class="card-text">Our local AI reads your documents and verifies the details instantly, ensuring no rejections due to typos.</p>
+                    </div>
+                    
+                    <div class="card animate-fade-in-up stagger-3 text-center">
+                        <i class="fa-solid fa-robot feature-icon"></i>
+                        <h3 class="card-title">3. Automated Submission</h3>
+                        <p class="card-text">Our Agent logs into the complex e-District portal and fills out the exact forms on your behalf, completely hands-free.</p>
+                    </div>
+                    
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <strong>GovApplier</strong> &copy; 2026. Making government services accessible.
+            </div>
+            <div>
+                Powered by AI & Automation.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

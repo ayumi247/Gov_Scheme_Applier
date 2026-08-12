@@ -1,0 +1,87 @@
+name: Gov Scheme Applier CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Pytest for Backend & Agent
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          
+      - name: Install System Dependencies (Tesseract & OpenCV)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-hin tesseract-ocr-eng libgl1-mesa-glx libglib2.0-0
+
+      - name: Install Backend Dependencies
+        run: |
+          cd gov_applier/backend
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Install Agent Dependencies
+        run: |
+          cd automation_agent
+          pip install -r requirements.txt
+          playwright install chromium
+          
+      # Uncomment when tests are written
+      # - name: Run Backend Tests
+      #   run: |
+      #     cd gov_applier/backend
+      #     pytest
+          
+      # - name: Run Agent Tests
+      #   run: |
+      #     cd automation_agent
+      #     pytest
+
+  deploy:
+    name: Trigger Vercel & Render Deployments
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy to Vercel (Frontend)
+        # Vercel natively handles deployment on push to GitHub. 
+        # But you can explicitly trigger a webhook if needed.
+        run: echo "Vercel automatically deploys on push to main branch."
+
+      - name: Deploy Main Backend (Render)
+        run: |
+          if [ -z "${{ secrets.RENDER_MAIN_BACKEND_HOOK }}" ]; then
+            echo "RENDER_MAIN_BACKEND_HOOK secret is not set, skipping..."
+          else
+            curl -X POST "${{ secrets.RENDER_MAIN_BACKEND_HOOK }}"
+          fi
+
+      - name: Deploy Clone Backend (Render)
+        run: |
+          if [ -z "${{ secrets.RENDER_CLONE_BACKEND_HOOK }}" ]; then
+            echo "RENDER_CLONE_BACKEND_HOOK secret is not set, skipping..."
+          else
+            curl -X POST "${{ secrets.RENDER_CLONE_BACKEND_HOOK }}"
+          fi
+
+      - name: Deploy CrewAI Agent (Render)
+        run: |
+          if [ -z "${{ secrets.RENDER_AGENT_HOOK }}" ]; then
+            echo "RENDER_AGENT_HOOK secret is not set, skipping..."
+          else
+            curl -X POST "${{ secrets.RENDER_AGENT_HOOK }}"
+          fi

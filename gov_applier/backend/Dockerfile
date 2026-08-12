@@ -1,0 +1,24 @@
+FROM python:3.11-slim
+
+# Install system dependencies, including Tesseract OCR and Hindi language pack
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    tesseract-ocr-hin \
+    tesseract-ocr-eng \
+    libgl1-mesa-glx \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port (Render sets PORT env variable)
+EXPOSE 8000
+
+# Run Uvicorn, binding to $PORT or defaulting to 8000
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}

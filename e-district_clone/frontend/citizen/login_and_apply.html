@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - e-District Delhi</title>
+    
+    <!-- Bootstrap CSS for layout mimicking -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar d-flex justify-content-between align-items-center px-4 py-1 text-white" style="background-color: #0b3b6c; font-size: 0.9rem;">
+        <div>Government of NCT of Delhi</div>
+        <div class="d-flex align-items-center">
+            <a href="#" class="text-white me-3"><i class="fas fa-wheelchair"></i></a>
+            <a href="#" class="text-white me-3"><i class="fas fa-sitemap"></i></a>
+            <a href="/citizen/login_and_apply" class="btn btn-warning btn-sm fw-bold me-3" style="border-radius: 0; color: #000;">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+            <div class="dropdown">
+                <a class="text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    English
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Hindi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Logos -->
+    <div class="header-logos bg-white d-flex justify-content-between align-items-center px-5 py-2">
+        <div class="d-flex align-items-center">
+            <!-- Placeholder for e-district logo -->
+            <div style="font-size: 2rem; font-weight: bold; color: #e67e22;">
+                <span style="color: #4a4a4a; font-style: italic; border: 3px solid #ccc; border-radius: 50%; padding: 5px 15px; margin-right: 10px;">e</span>
+                District Delhi
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <!-- Placeholders for other logos -->
+            <div class="text-muted fw-bold" style="font-size: 1.2rem;">Azadi Ka Amrit Mahotsav</div>
+            <div class="text-muted fw-bold" style="font-size: 1.2rem;">दिल्ली सरकार</div>
+        </div>
+    </div>
+
+    <!-- Main Navigation (Blue Bar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b5394;">
+        <div class="container-fluid px-5">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="background-color: #0d6efd;" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="/services" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/services#revenue">Revenue</a></li>
+                            <li><a class="dropdown-item" href="/services#higher_education">Higher Education</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="citizenDropdown" role="button" data-bs-toggle="dropdown">
+                            Citizen's Corner
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/citizen/new_user_registration">New User Registration</a></li>
+                            <li><a class="dropdown-item" href="/citizen/login_and_apply">Login & Apply</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown">
+                            Downloads
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Forms</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Feedback/Suggestion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        
+<div class="container my-5" style="max-width: 800px;">
+    
+    <div class="card border-0 shadow-sm mb-5">
+        <div class="card-header text-white text-center fw-bold" style="background-color: #0b5394; border-radius: 0;">
+            Citizen Login Form
+        </div>
+        <div class="card-body p-0">
+            <!-- Mock form that submits to dashboard for the clone -->
+            <form id="loginForm">
+                <table class="table table-bordered mb-0 align-middle">
+                    <tbody>
+                        <tr>
+                            <td style="width: 30%; padding: 15px;" class="bg-light">Registration ID/User Id</td>
+                            <td style="width: 40%; padding: 15px;">
+                                <input type="text" class="form-control border-info" style="border-radius: 4px;" required>
+                            </td>
+                            <td style="width: 30%; padding: 15px;">
+                                <a href="#" class="text-success text-decoration-none">Forget Registration ID/User ID ?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;" class="bg-light">Password</td>
+                            <td style="padding: 15px;">
+                                <input type="password" class="form-control" style="border-radius: 4px;" required>
+                            </td>
+                            <td style="padding: 15px;">
+                                <a href="#" class="text-success text-decoration-none">Forget Password ?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;" class="bg-light border-end-0"></td>
+                            <td colspan="2" style="padding: 15px;" class="border-start-0">
+                                <!-- Dummy Captcha -->
+                                <div class="mb-2 d-flex align-items-center">
+                                    <div class="bg-light border p-2 text-center" style="font-size: 1.5rem; letter-spacing: 5px; font-weight: bold; width: 150px; color: #d35400; font-family: 'Courier New', Courier, monospace;">
+                                        zN1A7v
+                                    </div>
+                                    <i class="fas fa-redo-alt ms-3 cursor-pointer" style="cursor: pointer;"></i>
+                                </div>
+                                <label class="fw-bold mb-1">Type the security code shown above:</label>
+                                <input type="text" class="form-control w-50" style="border-radius: 4px;" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;" class="bg-light border-end-0"></td>
+                            <td colspan="2" style="padding: 15px;" class="border-start-0">
+                                <button type="submit" class="btn btn-primary px-4 fw-bold" style="background-color: #0d6efd; border: none; border-radius: 4px;">Login</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="padding: 15px;" class="bg-light">
+                                <a href="/citizen/new_user_registration" class="btn btn-secondary btn-sm me-2" style="background-color: #6c757d; border: none; border-radius: 4px;">Register</a> 
+                                <span>if you are a new user.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #0b1a2f; color: #fff; padding: 40px 0 20px 0; margin-top: 50px;">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <!-- Policies -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-4">POLICIES</h6>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Copyright Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Help</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Website Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                <!-- Address -->
+                <div class="col-md-6">
+                    <h6 class="fw-bold mb-4">E-District Delhi</h6>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li class="mb-3 d-flex">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <div>Government of National Capital Territory of Delhi / Department of Information Technology,<br>9th Level, B-wing, Delhi Secretariat,<br>I.P. Estate,<br>Delhi-110002 (India)</div>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-clock me-3 mt-1"></i>
+                            <div>Office Timing:<br>09:30 AM to 06:00 PM</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Visitor No -->
+                <div class="col-md-3 text-end">
+                    <h6 class="fw-bold">Visitor No :326898738</h6>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-3" style="border-color: #444;">
+            
+            <div class="row align-items-center" style="font-size: 0.8rem;">
+                <div class="col-md-9">
+                    <p class="mb-1">&copy; Disclaimer: Designed, developed and hosted by National Informatics Centre (NIC). Contents owned and maintained by Delhi e-Governance Society, Information Technology Department, Govt. of NCT of Delhi.</p>
+                    <p class="mb-0">Best viewed in the latest versions of Google Chrome, Microsoft Edge, and Mozilla Firefox.</p>
+                </div>
+                <div class="col-md-3 text-end">
+                    <p class="mb-0">Last Updated: 01/08/2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+<script src="/js/script.js"></script>
+</body>
+</html>

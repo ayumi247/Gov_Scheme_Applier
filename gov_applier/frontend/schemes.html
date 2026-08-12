@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes Directory | Gov Scheme Applier</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px var(--accent-blue-light);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-tag:hover, .filter-tag.active {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+        
+        .schemes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .req-list {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="fa-solid fa-building-columns"></i>
+                GovApplier
+            </a>
+            <div class="nav-links">
+                <a href="schemes.html" class="nav-link" style="color: var(--accent-blue);">Schemes</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <div class="page-header animate-fade-in-up">
+                <h1>Available Schemes</h1>
+                <p style="color: var(--text-secondary);">Select a scheme to apply. We handle the paperwork.</p>
+            </div>
+            
+            <div class="search-bar animate-fade-in-up stagger-1">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for Income, Caste, Scholarships...">
+            </div>
+            
+            <div class="filters animate-fade-in-up stagger-1">
+                <div class="filter-tag active">All</div>
+                <div class="filter-tag">Certificates</div>
+                <div class="filter-tag">Scholarships</div>
+                <div class="filter-tag">Pensions</div>
+            </div>
+            
+            <div class="schemes-grid" id="schemesGrid">
+                
+                <!-- Card 1 -->
+                <div class="card animate-fade-in-up stagger-2">
+                    <span class="badge badge-blue mb-2">Certificate</span>
+                    <h3 class="card-title" style="margin-top: 0.5rem;">Income Certificate</h3>
+                    <p class="card-text">Official document issued by state government certifying your annual family income.</p>
+                    
+                    <ul class="req-list">
+                        <li>Aadhar Card</li>
+                        <li>Self Declaration Form</li>
+                        <li>Recent Photograph</li>
+                    </ul>
+                    
+                    <a href="apply.html?scheme=income" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card animate-fade-in-up stagger-3">
+                    <span class="badge badge-warning mb-2">Certificate</span>
+                    <h3 class="card-title" style="margin-top: 0.5rem;">Non-Creamy Layer (NCL)</h3>
+                    <p class="card-text">Certificate for OBC category showing they do not fall under the creamy layer.</p>
+                    
+                    <ul class="req-list">
+                        <li>Aadhar Card</li>
+                        <li>Caste Proof</li>
+                        <li>Income Proof</li>
+                    </ul>
+                    
+                    <a href="apply.html?scheme=ncl" class="btn btn-secondary" style="width: 100%;">Apply Now</a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Core Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

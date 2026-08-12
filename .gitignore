@@ -1,0 +1,18 @@
+# Python Virtual Environments
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment Variables (Keep your API keys secret!)
+.env
+.env.*
+*.env
+
+# Node modules (if any)
+node_modules/
+.npm/
+
+# OS generated files
+.DS_Store
+Thumbs.db

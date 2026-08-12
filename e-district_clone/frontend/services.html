@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - e-District Delhi</title>
+    
+    <!-- Bootstrap CSS for layout mimicking -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar d-flex justify-content-between align-items-center px-4 py-1 text-white" style="background-color: #0b3b6c; font-size: 0.9rem;">
+        <div>Government of NCT of Delhi</div>
+        <div class="d-flex align-items-center">
+            <a href="#" class="text-white me-3"><i class="fas fa-wheelchair"></i></a>
+            <a href="#" class="text-white me-3"><i class="fas fa-sitemap"></i></a>
+            <a href="/citizen/login_and_apply" class="btn btn-warning btn-sm fw-bold me-3" style="border-radius: 0; color: #000;">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+            <div class="dropdown">
+                <a class="text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    English
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Hindi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Logos -->
+    <div class="header-logos bg-white d-flex justify-content-between align-items-center px-5 py-2">
+        <div class="d-flex align-items-center">
+            <!-- Placeholder for e-district logo -->
+            <div style="font-size: 2rem; font-weight: bold; color: #e67e22;">
+                <span style="color: #4a4a4a; font-style: italic; border: 3px solid #ccc; border-radius: 50%; padding: 5px 15px; margin-right: 10px;">e</span>
+                District Delhi
+            </div>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <!-- Placeholders for other logos -->
+            <div class="text-muted fw-bold" style="font-size: 1.2rem;">Azadi Ka Amrit Mahotsav</div>
+            <div class="text-muted fw-bold" style="font-size: 1.2rem;">दिल्ली सरकार</div>
+        </div>
+    </div>
+
+    <!-- Main Navigation (Blue Bar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0b5394;">
+        <div class="container-fluid px-5">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="background-color: #0d6efd;" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="/services" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/services#revenue">Revenue</a></li>
+                            <li><a class="dropdown-item" href="/services#higher_education">Higher Education</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="citizenDropdown" role="button" data-bs-toggle="dropdown">
+                            Citizen's Corner
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/citizen/new_user_registration">New User Registration</a></li>
+                            <li><a class="dropdown-item" href="/citizen/login_and_apply">Login & Apply</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown">
+                            Downloads
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Forms</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Feedback/Suggestion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #e67e22; font-weight: bold; text-transform: uppercase;">
+        Services Available At e-District Delhi
+    </h2>
+    
+    <div class="text-end mb-2">
+        <button class="btn btn-primary fw-bold" style="background-color: #0d6efd; border-radius: 4px;">Service List Download</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="text-white text-center" style="background-color: #0b5394;">
+                <tr>
+                    <th scope="col" style="width: 5%;">S.No.</th>
+                    <th scope="col" style="width: 45%;">Name of Service</th>
+                    <th scope="col" style="width: 20%;">Concerned Department</th>
+                    <th scope="col" style="width: 15%;">Prescribed Timeline</th>
+                    <th scope="col" style="width: 15%;">Download Form <br><small>(in pdf format)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Department Header -->
+                <tr style="background-color: #0b5394; color: white;">
+                    <td colspan="5" class="text-center fw-bold" id="revenue">DEPARTMENT OF REVENUE</td>
+                </tr>
+
+                <!-- Service Rows -->
+                <tr>
+                    <td class="text-center">1</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Service Issuance of Translated version of the certificates</a></td>
+                    <td class="text-center">Department of Revenue</td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Non-Creamy Layer Certificate (NCL) for OBC</a></td>
+                    <td class="text-center">Department of Revenue</td>
+                    <td class="text-center">14</td>
+                    <td class="text-center"></td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Issuance of Income and Assets Certificate for Economically Weaker Section(EWS)</a></td>
+                    <td class="text-center">Department of Revenue</td>
+                    <td class="text-center">15</td>
+                    <td class="text-center"></td>
+                </tr>
+                <tr>
+                    <td class="text-center">4</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Registration of Marriage</a></td>
+                    <td class="text-center">Department of Revenue</td>
+                    <td class="text-center">21</td>
+                    <td class="text-center"><i class="fas fa-file-pdf text-success fs-4"></i></td>
+                </tr>
+                <tr>
+                    <td class="text-center">...</td>
+                    <td class="text-muted fst-italic">Other intermediate services omitted for clone brevity</td>
+                    <td class="text-center">...</td>
+                    <td class="text-center">...</td>
+                    <td class="text-center"></td>
+                </tr>
+                <tr>
+                    <td class="text-center">21</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Issuance of Income Certificate</a></td>
+                    <td class="text-center">Department of Revenue</td>
+                    <td class="text-center">14</td>
+                    <td class="text-center"><i class="fas fa-file-pdf text-success fs-4"></i></td>
+                </tr>
+                
+                <!-- Higher Education Anchor Example -->
+                <tr style="background-color: #0b5394; color: white;">
+                    <td colspan="5" class="text-center fw-bold" id="higher_education">DEPARTMENT OF HIGHER EDUCATION</td>
+                </tr>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td><a href="/citizen/login_and_apply" class="text-decoration-none">Higher Education and Skill Development Guarantee Scheme</a></td>
+                    <td class="text-center">Department of Higher Education</td>
+                    <td class="text-center">30</td>
+                    <td class="text-center"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #0b1a2f; color: #fff; padding: 40px 0 20px 0; margin-top: 50px;">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <!-- Policies -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-4">POLICIES</h6>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Copyright Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Help</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Website Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                <!-- Address -->
+                <div class="col-md-6">
+                    <h6 class="fw-bold mb-4">E-District Delhi</h6>
+                    <ul class="list-unstyled" style="font-size: 0.9rem;">
+                        <li class="mb-3 d-flex">
+                            <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                            <div>Government of National Capital Territory of Delhi / Department of Information Technology,<br>9th Level, B-wing, Delhi Secretariat,<br>I.P. Estate,<br>Delhi-110002 (India)</div>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-clock me-3 mt-1"></i>
+                            <div>Office Timing:<br>09:30 AM to 06:00 PM</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Visitor No -->
+                <div class="col-md-3 text-end">
+                    <h6 class="fw-bold">Visitor No :326898738</h6>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-3" style="border-color: #444;">
+            
+            <div class="row align-items-center" style="font-size: 0.8rem;">
+                <div class="col-md-9">
+                    <p class="mb-1">&copy; Disclaimer: Designed, developed and hosted by National Informatics Centre (NIC). Contents owned and maintained by Delhi e-Governance Society, Information Technology Department, Govt. of NCT of Delhi.</p>
+                    <p class="mb-0">Best viewed in the latest versions of Google Chrome, Microsoft Edge, and Mozilla Firefox.</p>
+                </div>
+                <div class="col-md-3 text-end">
+                    <p class="mb-0">Last Updated: 01/08/2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    
+</body>
+</html>

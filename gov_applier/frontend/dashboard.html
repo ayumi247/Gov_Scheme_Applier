@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Gov Scheme Applier</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+    <style>
+        .dashboard-header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .app-item {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .app-item:last-child {
+            border-bottom: none;
+        }
+        
+        .app-info h4 {
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+        
+        .app-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .doc-item:last-child {
+            border-bottom: none;
+        }
+        
+        .doc-icon {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="fa-solid fa-building-columns"></i>
+                GovApplier
+            </a>
+            
+            <div class="nav-links">
+                <a href="schemes.html" class="nav-link">Apply New Scheme</a>
+                <a href="dashboard.html" class="nav-link" style="color: var(--accent-blue);">Dashboard</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="logoutBtn" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <div class="dashboard-header animate-fade-in-up">
+                <div>
+                    <h1 id="welcomeText">Welcome back</h1>
+                    <p style="color: var(--text-secondary);">Track your applications and documents</p>
+                </div>
+                <a href="schemes.html" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> New Application
+                </a>
+            </div>
+            
+            <div class="dashboard-grid">
+                
+                <!-- Applications Tracker -->
+                <div class="card animate-fade-in-up stagger-1">
+                    <h3 class="card-title" style="margin-bottom: 1rem;">My Applications</h3>
+                    
+                    <div id="applicationsList">
+                        <!-- Example Mock Data -->
+                        <div class="app-item">
+                            <div class="app-info">
+                                <h4>Income Certificate</h4>
+                                <p>Ref: APP-2026-98234 &bull; Submitted 2 days ago</p>
+                            </div>
+                            <span class="badge badge-warning">Processing by Agent</span>
+                        </div>
+                        
+                        <div class="app-item">
+                            <div class="app-info">
+                                <h4>Non-Creamy Layer (NCL)</h4>
+                                <p>Ref: APP-2026-44122 &bull; Submitted 1 week ago</p>
+                            </div>
+                            <span class="badge badge-success">Completed on e-District</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Document Vault -->
+                <div class="card animate-fade-in-up stagger-2">
+                    <h3 class="card-title" style="margin-bottom: 1rem;">Document Vault</h3>
+                    <p class="card-text" style="margin-bottom: 1rem;">Your verified documents stored securely.</p>
+                    
+                    <div id="documentsList">
+                        <div class="doc-item">
+                            <i class="fa-solid fa-id-card doc-icon"></i>
+                            <div class="doc-info">
+                                <h4 style="font-size: 0.95rem; margin-bottom: 0.1rem;">Aadhar Card</h4>
+                                <p style="font-size: 0.8rem; color: var(--success);"><i class="fa-solid fa-check-circle"></i> Verified by AI</p>
+                            </div>
+                        </div>
+                        <div class="doc-item">
+                            <i class="fa-solid fa-file-invoice-dollar doc-icon"></i>
+                            <div class="doc-info">
+                                <h4 style="font-size: 0.95rem; margin-bottom: 0.1rem;">Salary Slip (Parent)</h4>
+                                <p style="font-size: 0.8rem; color: var(--success);"><i class="fa-solid fa-check-circle"></i> Verified by AI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- Ask AI Chatbot Interface -->
+    <div class="chatbot-widget">
+        <!-- Floating Toggle Button -->
+        <button class="chatbot-toggle animate-pulse-glow" id="chatbotToggle">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        
+        <!-- Chat Panel -->
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                <h3><i class="fa-solid fa-robot"></i> Ask Grok AI</h3>
+                <button class="chatbot-close" id="chatbotClose"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-bubble bot">
+                    Hello! I am your AI assistant powered by Grok. I can help you with questions regarding government schemes, scholarships, and the e-District portal. How can I help you today?
+                </div>
+                <!-- Dynamic messages will appear here -->
+            </div>
+            
+            <form class="chatbot-input-area" id="chatbotForm">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your question..." required>
+                <button type="submit" class="chatbot-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+    <script>
+        // Check Auth state
+        document.addEventListener('DOMContentLoaded', async () => {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) {
+                window.location.href = 'auth.html';
+                return;
+            }
+            
+            // Fetch User Profile
+            const { data: profile } = await supabase
+                .from('profiles')
+                .select('full_name')
+                .eq('id', session.user.id)
+                .single();
+                
+            if (profile && profile.full_name) {
+                document.getElementById('welcomeText').innerText = `Welcome back, ${profile.full_name.split(' ')[0]}!`;
+            }
+            
+            // Handle Logout
+            document.getElementById('logoutBtn').addEventListener('click', async () => {
+                await supabase.auth.signOut();
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
