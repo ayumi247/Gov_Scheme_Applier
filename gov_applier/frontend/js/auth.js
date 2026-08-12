@@ -54,10 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerText = 'Creating account...';
             submitBtn.disabled = true;
             
-            // 1. Sign up user
+            // 1. Sign up user with metadata
             const { data, error } = await supabase.auth.signUp({
                 email: email,
                 password: password,
+                options: {
+                    data: {
+                        full_name: name
+                    }
+                }
             });
             
             if (error) {
@@ -67,18 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // 2. Insert into public.profiles
-            if (data.user) {
-                const { error: profileError } = await supabase
-                    .from('profiles')
-                    .insert([
-                        { id: data.user.id, full_name: name }
-                    ]);
-                    
-                if (profileError) {
-                    console.error('Error creating profile:', profileError);
-                }
-            }
+            // Profile insertion is now handled securely by Supabase Postgres Trigger
             
             alert('Account created! Please log in.');
             window.location.reload();
