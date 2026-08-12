@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:8000/api"; // This will be the Render URL in production
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE_URL = isLocalhost ? 'http://localhost:8080/api' : 'https://e-district-clone-backend.onrender.com/api';
 
 document.addEventListener("DOMContentLoaded", () => {
     

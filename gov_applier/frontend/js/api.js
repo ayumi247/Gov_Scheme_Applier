@@ -1,7 +1,8 @@
 // Centralized API handler for calls to the Render FastAPI backend
 // This will be fully implemented in Phase 4.
 
-const API_BASE_URL = 'https://mock-gov-applier-backend.onrender.com'; // Placeholder
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE_URL = isLocalhost ? 'http://localhost:8000' : 'https://gov-scheme-main-backend.onrender.com';
 
 const API = {
     
