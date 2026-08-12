@@ -9,4 +9,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Start server using shell form to allow environment variable expansion
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080}
